@@ -5,9 +5,8 @@ echo "Anjelo's Arch installation Script"
 sleep 3s 
 clear
 read -p "Pick disk to install on (eg: /dev/sdx)" USER_DISK
-lsblk
 
-sfdisk $USER_DISK
+#sfdisk $USER_DISK
 
 clear
 lsblk
