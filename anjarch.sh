@@ -18,5 +18,5 @@ mkswap $SWAP_PART
 
 mount $ROOT_PART /mnt
 swapon $SWAP_PART
-
-pacstrap -K 
+echo "cumpy cumpy"
+#pacstrap -K 
