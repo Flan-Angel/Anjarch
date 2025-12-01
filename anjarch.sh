@@ -6,18 +6,18 @@ sleep 3s
 clear
 echo "Pick disk to install on (eg: /dev/sdx)"
 read USER_DISK
-echo $USER_DISK
-#
-##sfdisk $USER_DISK
-#
-#clear
-#lsblk
-#read -p "name root partition (/dev/sdx)" ROOT_PART
-#mkfs.ext4 $ROOT_PART
-#read -p "name swap partition (/dev/sdx)" SWAP_PART
-#mkswap $SWAP_PART
-#
-#mount $ROOT_PART /mnt
-#swapon $SWAP_PART
-#echo "cumpy cumpy"
-##pacstrap -K 
+echo "$USER_DISK"
+
+sfdisk "$USER_DISK"
+
+clear
+lsblk
+read -r -p "name root partition (/dev/sdx)" ROOT_PART
+mkfs.ext4 "$ROOT_PART"
+read -r -p "name swap partition (/dev/sdx)" SWAP_PART
+mkswap "$SWAP_PART"
+
+mount "$ROOT_PART" /mnt
+swapon "$SWAP_PART"
+echo "cumpy cumpy"
+#pacstrap -K 
